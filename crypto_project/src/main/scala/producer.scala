@@ -1,42 +1,39 @@
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.sql.types._
-import org.apache.spark.sql.functions._
-import org.apache.spark.sql.streaming.Trigger
+import scala.io.Source
+import java.io.{File, PrintWriter}
+import java.nio.file.{Files, Paths}
+import scala.concurrent.{ExecutionContext, Future}
 
-
-object CsvStreamingReader {
+object CsvSplitter {
 
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder()
-      .appName("CSVStreamingReader")
-      .master("local[*]")
-      .getOrCreate()
+    val singleCsvPath = "src/resources/src/resources/btc_4h_data_2018_to_2024-2024-12-10(1).csv"
+    val outputDir = "streaming"
 
-    val schema = StructType(Seq(
-      StructField("Open", DoubleType, nullable = true),
-      StructField("High", DoubleType, nullable = true),
-      StructField("Low", DoubleType, nullable = true),
-      StructField("Close", DoubleType, nullable = true),
-      StructField("Volume", DoubleType, nullable = true)
-    ))
+    val lines = Source.fromFile(singleCsvPath).getLines().toList
+    val header = lines.head
+    val dataLines = lines.tail
 
-    val inputDir = "streaming"
+    val chunkSize = 10
+    var chunkIndex = 0
 
-    val streamingInputDF = spark.readStream
-      .option("header", "true")
-      .option("inferSchema", "false") 
-      .schema(schema) 
-      .csv(inputDir)
+    val outputDirectory = new File(outputDir)
+    if (!outputDirectory.exists()) {
+      outputDirectory.mkdirs()
+    }
 
-    val processedDF = streamingInputDF
-      .withColumnRenamed("Open", "open_price")  
+    while (chunkIndex * chunkSize < dataLines.length) {
+      val chunk = dataLines.slice(chunkIndex * chunkSize, (chunkIndex + 1) * chunkSize)
+      val chunkFileName = s"$outputDir/chunk$chunkIndex.csv"
+      val writer = new PrintWriter(new File(chunkFileName))
 
-    val query = processedDF.writeStream
-      .outputMode("append")  
-      .format("console")     /
-      .trigger(Trigger.ProcessingTime("5 seconds"))  
-      .start()
+      writer.println(header)
+      chunk.foreach(writer.println)
+      writer.close()
 
-    query.awaitTermination()
+      println(s"Wrote $chunkFileName with ${chunk.size} lines.")
+      chunkIndex += 1
+
+      Thread.sleep(5000)
+    }
   }
 }
