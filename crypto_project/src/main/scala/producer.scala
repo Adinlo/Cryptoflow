@@ -12,7 +12,6 @@ object CsvStreamingReader {
       .master("local[*]")
       .getOrCreate()
 
-    // Définir le schéma pour les données CSV
     val schema = StructType(Seq(
       StructField("Open", DoubleType, nullable = true),
       StructField("High", DoubleType, nullable = true),
@@ -25,18 +24,17 @@ object CsvStreamingReader {
 
     val streamingInputDF = spark.readStream
       .option("header", "true")
-      .option("inferSchema", "false") // Désactiver l'inférence de schéma automatique
-      .schema(schema) // Appliquer le schéma défini
+      .option("inferSchema", "false") 
+      .schema(schema) 
       .csv(inputDir)
 
     val processedDF = streamingInputDF
-      .withColumnRenamed("Open", "open_price")  // Exemple de transformation simple
+      .withColumnRenamed("Open", "open_price")  
 
-    // Requête de sortie en mode append avec une fréquence de traitement de 5 secondes
     val query = processedDF.writeStream
-      .outputMode("append")  // Mode d'addition des nouvelles lignes
-      .format("console")     // Affichage dans la console
-      // .trigger(Trigger.ProcessingTime("5 seconds"))  // Déclenchement tous les 5 secondes
+      .outputMode("append")  
+      .format("console")     /
+      .trigger(Trigger.ProcessingTime("5 seconds"))  
       .start()
 
     query.awaitTermination()
