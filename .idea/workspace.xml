@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="803e8c3f-3c44-4bf3-aed2-6b42655959cf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/.metadata.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/commits/.0.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/commits/.1.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/commits/0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/commits/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/offsets/.0.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/offsets/.1.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/offsets/0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/offsets/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/sources/0/.0.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/sources/0/.1.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/sources/0/0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_10line_streaming/sources/0/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/.metadata.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/commits/.0.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/commits/.1.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/commits/0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/commits/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/offsets/.0.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/offsets/.1.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/offsets/0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/offsets/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/sources/0/.0.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/sources/0/.1.crc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/sources/0/0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkpoint/csv_streaming_app/sources/0/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/build.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/MainApp.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/consumer_split.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/producer.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/build.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/btc_4h_data_2018_to_2024-2024-12-10(1) (1).csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/btc_4h_data_2018_to_2024-2024-12-10.csv" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2rBpfpAa1vvFlOgF9eyevBnHTFU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dev",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="ScalaProjectSettings">
+    <option name="migrateConfigurationsNotificationShown" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="803e8c3f-3c44-4bf3-aed2-6b42655959cf" name="Changes" comment="" />
+      <created>1736042430845</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736042430845</updated>
+    </task>
+    <servers />
+  </component>
+</project>
