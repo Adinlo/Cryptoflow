@@ -43,11 +43,10 @@ import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
 
 object CsvKafkaProducer {
   def main(args: Array[String]): Unit = {
-    val csvFilePath = "src/resources/btc_4h_data_2018_to_2024.csv" // Chemin vers le fichier CSV
-    val kafkaTopic = "btc_topic" // Nom du topic Kafka
-    val bootstrapServers = "kafka:9092" // Adresse Kafka dans Docker
+    val csvFilePath = "src/resources/src/resources/btc_4h_data_2018_to_2024-2024-12-10.csv" 
+    val kafkaTopic = "btc_topic" 
+    val bootstrapServers = "localhost:9092" 
 
-    // Configurer Kafka Producer
     val props = new Properties()
     props.put("bootstrap.servers", bootstrapServers)
     props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer")
@@ -55,21 +54,23 @@ object CsvKafkaProducer {
 
     val producer = new KafkaProducer[String, String](props)
 
-    // Lire le fichier CSV et envoyer les lignes au topic Kafka
-    val source = scala.io.Source.fromFile(csvFilePath)
-    val lines = source.getLines().toList
-    val header = lines.head // Ignorer l'en-tête
-    val dataLines = lines.tail
+    try {
+      val source = scala.io.Source.fromFile(csvFilePath)
+      val lines = source.getLines().toList
+      val header = lines.head 
+      val dataLines = lines.tail
 
-    dataLines.foreach { line =>
-      val record = new ProducerRecord[String, String](kafkaTopic, null, line)
-      producer.send(record)
-      println(s"Message envoyé à Kafka: $line")
-      Thread.sleep(1000) 
+      dataLines.foreach { line =>
+        val record = new ProducerRecord[String, String](kafkaTopic, null, line)
+        producer.send(record)
+        println(s"Message envoyé à Kafka: $line") // pas de println
+        Thread.sleep(1000) 
+      }
+      source.close()
+    } finally {
+      producer.close()
     }
-
-    producer.close()
-    source.close()
   }
 }
+
 
