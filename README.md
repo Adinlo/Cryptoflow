@@ -16,5 +16,5 @@ installer sbt :
 
 pour lancer le consumer et le producer
 
-sbt "runMain CsvStreamingReader"
-sbt "runMain CsvSplitter"
+sbt "runMain CsvKafkaProducer"
+sbt "runMain KafkaToCsvConsumer"
