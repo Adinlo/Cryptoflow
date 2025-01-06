@@ -22,7 +22,7 @@ object KafkaToCsvConsumer {
 
     val kafkaStreamDF = spark.readStream
       .format("kafka")
-      .option("kafka.bootstrap.servers", "kafka:9092") 
+      .option("kafka.bootstrap.servers", "localhost:9092") 
       .option("subscribe", "btc_topic") 
       .load()
 
@@ -59,12 +59,18 @@ object KafkaToCsvConsumer {
         max("Close").alias("max_close")
       )
 
+    val flattenedDF = windowedDF
+      .withColumn("window_start", col("window.start")) // Extraire le début de la fenêtre
+      .withColumn("window_end", col("window.end"))    // Extraire la fin de la fenêtre
+      .drop("window") // Supprimer la colonne d'origine
+
+
     // Écrire les résultats dans un fichier CSV
-    val query = windowedDF.writeStream
+    val query = flattenedDF.writeStream
       .outputMode("append")
       .format("csv")
-      .option("path", "output/results/") // Chemin des fichiers de sortie
-      .option("checkpointLocation", "output/checkpoint/") // Chemin pour le checkpoint
+      .option("path", "output/results") // Chemin des fichiers de sortie
+      .option("checkpointLocation", "output/checkpoint/") 
       .start()
 
     query.awaitTermination()

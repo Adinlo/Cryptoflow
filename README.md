@@ -14,7 +14,10 @@ installer sbt :
     sbt compile
     sbt run
 
-pour lancer le consumer et le producer
+installer docker
+
+
+installer kafka
 
 sbt "runMain CsvKafkaProducer"
 sbt "runMain KafkaToCsvConsumer"
