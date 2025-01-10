@@ -14,6 +14,7 @@ lazy val root = (project in file("."))
       "org.apache.hadoop" % "hadoop-hdfs" % "3.3.1",
       "org.apache.kafka" % "kafka-clients" % "3.3.1",
       "org.apache.spark" %% "spark-sql-kafka-0-10" % "3.2.0",
+      "org.postgresql" % "postgresql" % "42.2.23",
 
     ),
    //Compile / run / mainClass := Some("CsvStreamingReader.main")   // change la mainclass 
